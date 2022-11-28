@@ -27,5 +27,8 @@ func main() {
 	defer f.Close()
 
 	links, err := link.Parse(f)
+	if err != nil {
+		exit("Error parsing html doc!")
+	}
 	link.ShowLinks(links)
 }
